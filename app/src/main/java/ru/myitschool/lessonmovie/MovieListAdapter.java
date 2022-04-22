@@ -1,6 +1,7 @@
 package ru.myitschool.lessonmovie;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -17,7 +18,11 @@ import ru.myitschool.lessonmovie.databinding.ItemMovieBinding;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.ViewHolder> {
     private ArrayList<MovieModel> data = new ArrayList<>();
+    private OnItemClickListener onClickListener = null;
 
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        onClickListener = listener;
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,7 +46,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
         return data.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+
+
+    class ViewHolder extends RecyclerView.ViewHolder {
         private final ItemMovieBinding binding;
 
         public ViewHolder(@NonNull ItemMovieBinding binding) {
@@ -57,6 +64,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
             binding.date.setText(item.date);
             binding.name.setText(item.name);
             binding.description.setText(item.description);
+            binding.getRoot().setOnClickListener(v -> onClickListener.onClick(item));
             setVisibleOrGone(binding.date, item.date);
             setVisibleOrGone(binding.name, item.name);
             setVisibleOrGone(binding.description, item.description);

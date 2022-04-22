@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        adapter.setOnItemClickListener(item->startActivity(MovieActivity.newIntent(this,item.id)));
         getDataFromNetwork();
         binding.recycler.setAdapter(adapter);
 
