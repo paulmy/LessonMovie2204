@@ -18,7 +18,7 @@ import ru.myitschool.lessonmovie.databinding.ItemMovieBinding;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.ViewHolder> {
     private ArrayList<MovieModel> data = new ArrayList<>();
-    private OnItemClickListener onClickListener = null;
+   private OnItemClickListener onClickListener = null;
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         onClickListener = listener;
@@ -32,7 +32,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bind(data.get(position));
+        holder.bind(data.get(position),onClickListener);
     }
 
     public void setItems(List<MovieModel> newItems) {
@@ -48,7 +48,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
 
 
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+  static class ViewHolder extends RecyclerView.ViewHolder {
         private final ItemMovieBinding binding;
 
         public ViewHolder(@NonNull ItemMovieBinding binding) {
@@ -56,7 +56,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
             this.binding = binding;
         }
 
-        public void bind(MovieModel item) {
+        public void bind(MovieModel item,OnItemClickListener listener) {
             Picasso.get()
                     .load(App.IMAGE_URL+item.imageUrl)
                     .into(binding.image);
@@ -64,7 +64,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
             binding.date.setText(item.date);
             binding.name.setText(item.name);
             binding.description.setText(item.description);
-            binding.getRoot().setOnClickListener(v -> onClickListener.onClick(item));
+
+           binding.getRoot().setOnClickListener(v ->listener.onClick(item));
             setVisibleOrGone(binding.date, item.date);
             setVisibleOrGone(binding.name, item.name);
             setVisibleOrGone(binding.description, item.description);

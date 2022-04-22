@@ -24,7 +24,7 @@ public class MovieActivity extends AppCompatActivity {
     }
 
     public static Intent newIntent(Context context, long id) {
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, MovieActivity.class);
         intent.putExtra(ARUMENT_ID, id);
         return intent;
     }
