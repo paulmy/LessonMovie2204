@@ -51,15 +51,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
 
         public void bind(MovieModel item) {
             Picasso.get()
-                    .load(App.IMAGE_URL+item.getImageUrl())
+                    .load(App.IMAGE_URL+item.imageUrl)
                     .into(binding.image);
 
-            binding.date.setText(item.getDate());
-            binding.name.setText(item.getName());
-            binding.description.setText(item.getDescription());
-            setVisibleOrGone(binding.date, item.getDate());
-            setVisibleOrGone(binding.name, item.getName());
-            setVisibleOrGone(binding.description, item.getDescription());
+            binding.date.setText(item.date);
+            binding.name.setText(item.name);
+            binding.description.setText(item.description);
+            setVisibleOrGone(binding.date, item.date);
+            setVisibleOrGone(binding.name, item.name);
+            setVisibleOrGone(binding.description, item.description);
         }
 
         private void setVisibleOrGone(View v, Object obj) {

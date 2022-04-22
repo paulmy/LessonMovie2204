@@ -3,14 +3,17 @@ package ru.myitschool.lessonmovie;
 import com.google.gson.annotations.SerializedName;
 
 public class MovieModel {
+    @SerializedName("id")
+    public long id;
     @SerializedName("poster_path")
-    private final String imageUrl;
+    public String imageUrl;
     @SerializedName("original_title")
-    private final String name;
+    public String name;
     @SerializedName("release_date")
-    private final String date;
+    public String date;
     @SerializedName("overview")
-    private final String description;
+    public String description;
+/*
 
     public MovieModel(String imageUrl, String name, String date, String description) {
         this.imageUrl = imageUrl;
@@ -18,6 +21,7 @@ public class MovieModel {
         this.date = date;
         this.description = description;
     }
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -33,5 +37,6 @@ public class MovieModel {
     public String getDescription() {
         return description;
     }
+*/
 
 }
