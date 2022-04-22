@@ -3,6 +3,7 @@
     package="ru.myitschool.lessonmovie">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -11,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LessonMovie">
+        <activity
+            android:name=".MovieActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

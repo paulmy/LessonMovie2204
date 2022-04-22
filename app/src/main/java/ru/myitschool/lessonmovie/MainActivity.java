@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     addToRecycler(response.body().results);
 
                     for (MovieModel l : response.body().results) {
-                        Log.d("TESTT", " " + l.getDate() + " " + l.getName());
+                        Log.d("TESTT", " " + l.date + " " + l.name);
 
                     }
                 } else {
