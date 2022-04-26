@@ -1,10 +1,8 @@
-package ru.myitschool.lessonmovie;
+package ru.myitschool.lessonmovie.ui.root;
 
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +12,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.myitschool.lessonmovie.App;
+import ru.myitschool.lessonmovie.data.dto.MovieModel;
+import ru.myitschool.lessonmovie.R;
 import ru.myitschool.lessonmovie.databinding.ItemMovieBinding;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.ViewHolder> {
@@ -59,6 +60,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
         public void bind(MovieModel item,OnItemClickListener listener) {
             Picasso.get()
                     .load(App.IMAGE_URL+item.imageUrl)
+                    .placeholder(R.drawable.ic_down)
+                    .error(R.drawable.ic_error)
                     .into(binding.image);
 
             binding.date.setText(item.date);

@@ -1,4 +1,4 @@
-package ru.myitschool.lessonmovie;
+package ru.myitschool.lessonmovie.data.dto;
 
 import java.util.List;
 

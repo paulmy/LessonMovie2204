@@ -6,6 +6,8 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.Locale;
+
 import okhttp3.Cache;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
@@ -13,6 +15,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ru.myitschool.lessonmovie.net.MovieApi;
 
 public class App extends Application {
     public static MovieApi api;
@@ -47,6 +50,7 @@ public class App extends Application {
                     .url()
                     .newBuilder()
                     .addQueryParameter("api_key", API_KEY)
+                    .addQueryParameter("language",Locale.getDefault().toLanguageTag())
                     .build();
             return chain.proceed(request.newBuilder().url(newUrl).build());
         };

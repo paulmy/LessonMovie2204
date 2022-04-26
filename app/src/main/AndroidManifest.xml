@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LessonMovie">
         <activity
-            android:name=".MovieActivity"
+            android:name=".ui.movie.MovieActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.root.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

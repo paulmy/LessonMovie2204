@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LessonMovie</string>
+    <string name="time_h">%d ч.</string>
+    <string name="time_m">%d м.</string>
 </resources>

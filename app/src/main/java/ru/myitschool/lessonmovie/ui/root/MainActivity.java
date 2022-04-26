@@ -1,4 +1,4 @@
-package ru.myitschool.lessonmovie;
+package ru.myitschool.lessonmovie.ui.root;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,23 +7,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.util.List;
 
-import okhttp3.Cache;
-import okhttp3.HttpUrl;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import ru.myitschool.lessonmovie.App;
+import ru.myitschool.lessonmovie.data.dto.MovieList;
+import ru.myitschool.lessonmovie.data.dto.MovieModel;
 import ru.myitschool.lessonmovie.databinding.ActivityMainBinding;
+import ru.myitschool.lessonmovie.ui.movie.MovieActivity;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;

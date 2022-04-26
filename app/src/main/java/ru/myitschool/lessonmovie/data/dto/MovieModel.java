@@ -1,4 +1,4 @@
-package ru.myitschool.lessonmovie;
+package ru.myitschool.lessonmovie.data.dto;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,7 +7,7 @@ public class MovieModel {
     public long id;
     @SerializedName("poster_path")
     public String imageUrl;
-    @SerializedName("original_title")
+    @SerializedName("title")
     public String name;
     @SerializedName("release_date")
     public String date;

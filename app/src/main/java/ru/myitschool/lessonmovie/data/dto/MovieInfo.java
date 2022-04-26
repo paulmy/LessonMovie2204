@@ -1,4 +1,4 @@
-package ru.myitschool.lessonmovie;
+package ru.myitschool.lessonmovie.data.dto;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -19,12 +19,12 @@ public class MovieInfo {
     public String data;
 
     @SerializedName("runtime")
-    public String runtime;
+    public int  runtime;
 
     @SerializedName("revenue")
     public String revenue;
 
-    @SerializedName("rating")
+    @SerializedName("vote_average")
     public String rating;
 
 }
